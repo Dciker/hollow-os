@@ -1,0 +1,55 @@
+// 字符串简单加密与解密.cpp : 定义控制台应用程序的入口点。
+//加密字符串,每个字符串的ascii+1
+//解密字符串,每个字符串的ascii+1
+//coder:flow
+//time:2016.1.14
+#include "stdafx.h"
+#include <Windows.h>
+#include <iostream>
+using namespace std;
+char str[20] = {0};
+int xuanxiang;
+void jiami()
+{
+	for (int i = 0; i < 5; i++)
+	{
+	str[i] += 1;
+	}
+	printf("请保存加密字符串:%s\n", str);
+}
+void jiemi()
+{
+	for (int i = 0; i < 5; i++)
+	{
+		str[i] -= 1;
+	}
+	printf("解密字符串：%s\n", str);
+}
+int main()
+{
+	printf("         字符串简单加密工具 \n");
+	printf("请不要加密特殊字符，可加密字符串数字，位数请勿超过13位 \n");
+	printf("1加密         \n");
+	printf("2解密 \n");
+	printf("请输入选项:");//
+	cin >> xuanxiang;
+
+	switch (xuanxiang)
+	{
+	case 1:
+		printf("请输入加密的字符串:");
+		scanf_s("%s", str, 20);
+		jiami();
+		break;
+	case 2:
+		printf("请输入解密的字符串:");
+		scanf_s("%s", str, 20);
+		jiemi();
+		break;
+	default:
+		printf("请按照提示操作\n");
+		break;
+	}
+	system("pause");
+    return 0;
+}
